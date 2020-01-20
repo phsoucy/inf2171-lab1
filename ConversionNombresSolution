@@ -1,0 +1,157 @@
+
+
+# INF2171 - Solutionnaire sur la conversion de nombres en binaire, octal et hexadécimal
+
+No 1) Donnez la valeur DECIMALE, HEXADECIMALE et OCTALE des nombres binaires suivants
+      sur 16 bits:
+
+```
+ a)00000000 01101101              b)00000000 11110010          c)00000000 00011101
+          1 * 1 =  1                      1 * 2  =  2                  1 * 1  =  1
+        + 1 * 4 =  4                    + 1 * 16 = 16                + 1 * 4  =  4
+        + 1 * 8 =  8                    + 1 * 32 = 32                + 1 * 8  =  8
+        + 1 * 32= 32                    + 1 * 64 = 64                + 1 * 16 = 16
+        + 1 * 64= 64                    + 1 * 128=128                  -----------
+          ----------                      -----------
+                =109   (base 10)                 =242   (b10)                 =29    (b10)
+0000000001101101=006D  (base 16) 0000000011110010=00F2  (b16) 0000000000011101=001D  (b16)
+0000000001101101=000155(base 8)  0000000011110010=000362(b8)  0000000000011101=000035(b8)
+
+   d)    10010010 10010101                            e) 11010111 01101011
+         36864 + 512 + 144 + 5 = 37525  (base 10)        53248 + 1792 + 96 +11 = 55147 (b10)
+         1001 0010 1001 0101   = 9295   (base 16)          1101 0111 0110 1011 = D76B  (b16)
+        1 001 001 010 010 101  = 111225 (base 8)         1 101 011 101 101 011 = 153553(b8)
+```
+
+No 2) Donnez la valeur DECIMALE, BINAIRE et OCTALE des nombres hexadécimaux suivants
+      sur 16 bits:
+
+    a) 0011                     b) 00B7                  c) 01FE
+      1 *  1 =  1                  7 *  1 =   7            14 *   1 =  14
+    + 1 * 16 = 16               + 11 * 16 = 176          + 15 *  16 = 240
+      -----------                --------------          +  1 * 256 = 256
+     base 10-->17              base 10-->183              ----------------
+     base 2-->0000000000010001 base 2-->0000000010110111 base 10-->510
+     base 2-->0000000000010001 base 2-->0000000010110111 base 2-->0000000111111110
+     base 8-->000021           base 8-->000267           base 2-->0000000111111110
+                                                         base 8-->000776
+    d) 1234
+      4 *    1 =    4
+    + 3 *   16 =   48
+    + 2 *  256 =  512
+    + 1 * 4096 = 4096
+      ---------------
+     base 10 -->4660
+     base 2-->  0001001000110100
+     base 2-->  0001001000110100
+     base 8-->  011064
+
+No 3) Donnez la valeur DECIMALE, BINAIRE et HEXADECIMALE des nombres octaux suivants
+      sur 16 bits:
+
+      a) 000255                    b) 000047
+      base 10--> 2*64+5*8+5 =173   base 10--> 4*8+7=39
+      base 2 --> 0000000010101101  base 2 --> 0000000000100111
+      base 2 --> 0000000010101101  base 2 --> 0000000000100111
+      base 16--> 00AD              base 16--> 0027
+
+      c) 000506                    d) 001234
+      base 10--> 5*64+6= 326       base 10--> 512+2*64+3*8+4 = 668
+      base 2 --> 0000000101000110  base 2 --> 0000001010011100
+      base 2 --> 0000000101000110  base 2 --> 0000001010011100
+      base 16--> 0146              base 16--> 029C
+
+No 4) Convertissez en décimal les nombres binaires codés en complément à deux (16 bits).
+
+      a) 0000 0000 0111 0111  b) 0000 0000 0110 1110  c) 1111 1111 1011 1101
+         119 (base 10)           110 (base 10)           0000 0000 0100 0010
+                                                                  +        1
+                                                         -------------------
+                                                         0000 0000 0100 0011
+                                                         complément de 0043 (base 16)
+                                                                        -67 (base 10)
+
+      d) 1111 1111 1111 1111    e) 1111 0110 0101 1001    f) 1111 1111 0000 0110
+         0000 0000 0000 0000       0000 1001 1010 0110       0000 0000 1111 1001
+        +                  1      +                  1      +                  1
+         -------------------       -------------------       -------------------
+         0000 0000 0000 0001       0000 1001 1010 0111       0000 0000 1111 1010
+         compl de 0001 (base 16)   compl de 09A7 (base 16)   compl de 00FA (base 16)
+                    -1 (base 10)           -2471 (base 10)            -250 (base 10)
+
+No 5) Effectuez les opérations en hexadécimal (compl-2, 16 bits) et dites s'il y a
+      débordement dans les cas suivants:
+
+      50A3  (positif)                           3826   (positif)
+    + 6A38  (positif)                         - 7000   (positif)
+      ----                                      ----
+      BADB  (négatif)                           C826   (négatif)
+      il y a débordement                        il n'y a pas de débordement
+
+      38A3  (positif)                           C839  (négatif)
+    + A330  (négatif)                          -7000  (positif)
+     -----                                      ----
+      DBD3  (négatif)                           5839   (positif)
+      il n'y a pas de débordement               il y a débordement
+
+No 6) Effectuez les additions arithmétiques...(compl-2, 16 bits).
+
+```
+ a) 1F2E (base 16)      FFFF        1F2E     b)     100 (base 10) --->   0064(base 16)
+   -3FCA (base 16)    - 3FCA       +C036        -177777 (base 8)  ---> - FFFF(base 16)
+     ---                ----        ----         ------                  ----
+         (base 16)      C035        DF64                (base 16)            (base 16)
+                       +   1                                            0064
+                        ----                                          + 0001
+                        C036                                            ----
+                                                                        0065 (base 16)
+
+
+    c) FF35  (base 16)            d) 1234  (base 16)        e) 7000 (base 16)
+      +1038  (base 16)              - 954  (base 10)          -93BC (base 16)
+      -001716(base 8)               +004701(base 8)           -2000 (base 16)
+      -------                        ------                    ----
+             (base 10)                     (base 2)                 (base 8)
+
+          Conv octal->hexa        Conv. dec->hex               7000 (b16)
+ FF35   0   0   1   7   1   6      +954(b10)=03BA            - 93BC (b16)
++1038   0 000 001 111 001 110                                  ----
+------    0000 0011 1100 1110       1234 (base 16)             DC44 (b16)
+ 0F6D        0    3    C    E      -03BA (base 16)           - 2000 (b16)
+-03CE<----------------------^       ----                       ----
+------                              0E7A (base 16)             BC44 (b16)
+ 0B9F-> Conv. hexa->décimal       ->0000 1110 0111 1010        1011 1100 0100 0100
+          15 *  1 =  15           0  000 111 001 111 010       1 011 110 001 000 100
+           9 * 16 = 144           0    0   7   1   7   2       1   3   6   1   0   4
+          11 *256 =2816           007172 (b8)                  136104 (b8)
+                   ----          +004701 (b8)
+                   2975 (b10)     ------
+                                  014073 (b8)
+                                  0 001 100 000 111 011 (b2)
+```
+
+No 7) Complétez les opérations arithmétiques suivantes. (16 bits, complément à 2).
+      Les débordements sont permis et ignorés.
+
+a)-23857 (base 10)-->   A2CF   (base 16)   b) 7599 (base 10)-->  1DAF   (base 16)
+                   -    AB13   (base 16)                      -  B7CE   (base 16)
+                        ====                                     ====
+                        F7BC   (base 16)                         65E1   (base 16)
+                  +     025646 (base 8)                       +  064665 (base 8)
+                        ======                                   ======
+    9058 (base 10)<--   021542 (base 8)     -12394(base 10)<--   147626 (base 8) débordement
+
+No 8) Quelle est la caractéristique des nombres PAIRS exprimés en binaire?
+      -le bit "0", (le bit le MOINS significatif (celui à l'extrême droite)) est à 0.
+
+No 9) Nombres représentables sur 8, 16 et 32 bits:
+       a)64    b) -56  d) -5
+      Nombres représentables sur 16 et 32 bits
+       c) 150  e)-132  f)1000  g)-4132  h) -16401
+      Nombres représentables sur 32 bits:
+       i)-42750   j) 59680
+
+No 10) Quelle chaîne de caractères correspond à la séquence hexadécimale
+       suivante de codes ASCII (8 bits) ?
+	 49 4E 46 32 31 37 31 20 47 72 6F 75 70 65 20 31 31
+          I  N  F  2  1  7  1     G  r  o  u  p  e     1  1

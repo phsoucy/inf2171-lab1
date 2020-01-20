@@ -1,0 +1,73 @@
+
+
+# INF2171       Conversion de nombres en binaire, octal et hexadécimal
+
+## Nombres non signés (16 bits)
+
+No 1) Donnez la valeur DECIMALE, HEXADECIMALE et OCTALE des nombres binaires suivants:
+
+      a) 00000000 01101101       b) 00000000 11110010          c) 00000000 00011101
+      d) 10010010 10010101       e) 11010111 01101011
+
+No 2) Donnez la valeur DECIMALE, BINAIRE et OCTALE des nombres hexadécimaux suivants:
+
+      a) 0011        b) 00B7        c) 01FE       d) 1234
+
+No 3) Donnez la valeur DECIMALE, BINAIRE et HEXADECIMALE des nombres octaux suivants:
+
+      a) 000255	     b)000047       c) 000506     d) 001234
+
+
+## Nombres signés (16 bits)
+
+No 4) Convertissez en décimal les nombres binaires codés en complément à deux.
+
+      a) 0000 0000 0111 0111   b) 0000 0000 0110 1110   c) 1111 1111 1011 1101
+      d) 1111 1111 1111 1111   e) 1111 0110 0101 1001   f) 1111 1111 0000 0110
+
+No 5) Effectuez les opérations en hexadécimal (compl-2, 16 bits) et dites s'il y a
+      débordement dans les cas suivants:
+
+     a)   50A3    b)   3826    c)    38A3     d)   C839
+        + 6A38       - 7000        + A330        - 7000
+          ----         ----          ----          ----
+
+No 6) Effectuez les additions arithmétiques (compl-2, 16 bits).
+
+    a) 1F2E   (base 16)     b)   100 (base 10)
+      -3FCA   (base 16)      -177777 (base 8)
+       ----                   ------
+              (base 16)              (base 16)
+
+    c) FF35  (base 16)          d) 1234  (base 16)	e) 7000 (base 16)
+      +1038  (base 16)            - 954  (base 10)	  -93BC (base 16)
+      -001716(base 8)             +004701(base 8)	  -2000 (base 16)
+       ------                      ------    	           ----
+             (base 10)                   (base 2)    	        (base 8)
+
+
+No 7) Complétez les opérations arithmétiques suivantes (16 bits, complément à 2).
+      Les débordements sont permis et ignorés.
+
+```
+a)-23857 (base 10)--> _________(base 16)  b) 7599 (base 10)-->________(base 16)
+                   -    AB13   (base 16)                    -   B7CE  (base 16)
+                     ===========                              ========
+                     __________(base 16)                     _________(base 16)
+                  +    025646  (base 8)                     +  064665 (base 8)
+                     ===========                             =========
+_________(base 10)<--__________(base 8)     ______(base 10)<-_________(base 8)
+```
+
+No 8) Quelle est la caractéristique des nombres PAIRS exprimés en binaire?
+
+No 9) Parmi les nombres décimaux signes suivants, quels sont ceux représentables
+      sur 8 bits ? sur 16 bits ? et sur 32 bits ?
+
+      a) 64      b) -56     c) 150     d) -5      e) -132
+      f) 1000    g) -4132   h)-16401   i)-42750   j) 59680
+
+No 10)Quelle chaîne de caractères correspond à la séquence hexadécimale
+      suivante de codes ASCII (8 bits) ?
+
+        494E46323137312047726F757065203131
